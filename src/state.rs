@@ -1,5 +1,6 @@
 use std::task::Waker;
 
+#[derive(Clone)]
 pub(crate) struct State {
     pub(crate) reader_waker: Option<Waker>,
     pub(crate) writer_waker: Option<Waker>,
@@ -10,6 +11,7 @@ pub(crate) struct State {
     pub(crate) closed: bool,
 }
 
+#[derive(Clone)]
 pub(crate) struct Data {
     pub(crate) ptr: *const u8,
     pub(crate) len: usize,
